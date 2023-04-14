@@ -1,7 +1,7 @@
-##############################################################################
+################################################################################
 # example fibonacci number code;
 # you do not have to modify this code in any way
-#############################################################################
+################################################################################
 
 
 def fibs(n):
@@ -45,10 +45,10 @@ def fib(n):
     return f2
 
 
-##############################################################################
+################################################################################
 # fibonacci number code using generators;
 # you will need to implement the functions below
-##############################################################################
+################################################################################
 
 
 class Fib:
@@ -60,13 +60,10 @@ class Fib:
     '''
 
     def __init__(self, n=None):
-<<<<<<< HEAD
         '''
         n is the number of iterations we will run;
         if n is None, then we will run forever
         '''
-=======
->>>>>>> bst
         self.n = n
 
     def __repr__(self):
@@ -76,13 +73,10 @@ class Fib:
             return 'Fib()'
 
     def __iter__(self):
-<<<<<<< HEAD
         '''
         Every class that supports the __iter__ method is an "iterable".
         All iterables support for loops and can be converted into a list.
         '''
-=======
->>>>>>> bst
         return FibIter(self.n)
 
 
@@ -117,35 +111,13 @@ class FibIter:
             self.next = num
             return num
 
-    def __init__(self, n=None):
-        self.n = n
-        self.fib0 = 1
-        self.fib1 = 1
-        self.i = 0
-
-    def __next__(self):
-        if self.n is None:
-            c = self.fib0
-            self.fib0, self.fib1 = self.fib1, self.fib1 + self.fib0
-            return c
-        if self.n:
-            if self.i > (self.n - 1):
-                raise StopIteration
-            else:
-                self.i += 1
-                c = self.fib0
-                self.fib0, self.fib1 = self.fib1, self.fib0 + self.fib1
-                return c
-
 
 def fib_yield(n=None):
     '''
-    This function returns a generator that compi
-    utes the first n fibonacci numbers.
+    This function returns a generator that computes the first n fibonacci numbers.
     If n is None, then the generator is infinite.
     '''
 
-<<<<<<< HEAD
     '''
     This function returns a generator that compi
     utes the first n fibonacci numbers.
@@ -167,22 +139,3 @@ def fib_yield(n=None):
             f0 = f1
             f1 = f2
             i += 1
-=======
-    fib0 = 1
-    fib1 = 1
-    fib2 = 0
-    total = 0
-    if n is None:
-        yield fib0
-        fib0
-        fib2 = fib0 + fib1
-        fib0 = fib1
-        fib1 = fib2
-    if n is not None:
-        while total < n:
-            yield fib0
-            fib2 = fib0 + fib1
-            fib0 = fib1
-            fib1 = fib2
-            total += 1
->>>>>>> bst

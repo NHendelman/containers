@@ -10,7 +10,6 @@ def range(a, b=None, c=None):
     >>> list(range(1, 5, 2))
     [1, 3]
     '''
-<<<<<<< HEAD
 
     if b is None and c is None:
         num = 0
@@ -34,32 +33,3 @@ def range(a, b=None, c=None):
             while num > b:
                 yield num
                 num += c
-=======
-    i = -1
-    if b is None and c is None:
-        while i < (a - 1):
-            i += 1
-            yield i
-    if b is not None and c is None:
-        i = (a - 1)
-        while i < (b - 1):
-            i += 1
-            yield i
-    if b is not None and c is not None:
-        if a < b and c < 0:
-            return []
-        if a > b and c > 0:
-            return []
-        if b > 0:
-            i = (a - c)
-            while (b - i) > 0:
-                i += c
-                if i <= (b - 1):
-                    yield i
-        if b < 0:
-            i = (a - c)
-            while (b - i) < 0:
-                i += c
-                if i >= (b + 1):
-                    yield i
->>>>>>> bst

@@ -2,10 +2,6 @@ from containers.fibonacci import fibs,fib,Fib,FibIter,fib_yield
 import inspect 
 import pytest
 
-################################################################################
-# FibIter
-################################################################################
-
 def test_FibIter_1():
     x = FibIter(1)
     assert next(x) == 1
@@ -57,10 +53,6 @@ def test_FibIter_5():
     for i in range(100000):
         next(x)
 
-################################################################################
-# Fib
-################################################################################
-
 def test_Fib_repr_1():
     assert repr(Fib(5)) == "Fib(5)"
 
@@ -92,9 +84,6 @@ def test_Fib_6():
     for f,i in zip(Fib(),range(100000)):
         assert True
 
-################################################################################
-# fib_yield
-################################################################################
 
 def test_fib_yield_0():
     assert inspect.isgeneratorfunction(fib_yield)
