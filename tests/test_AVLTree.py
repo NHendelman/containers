@@ -268,8 +268,6 @@ def test__AVLTree_remove1(xs):
         assert x not in avl
         assert set(avl.to_list('inorder'))==set(xs)
         assert avl.is_avl_satisfied()
-
-
 @given(xs=ints)
 def test__AVLTree_remove2(xs):
     '''
@@ -283,8 +281,6 @@ def test__AVLTree_remove2(xs):
         y += 1
     avl.remove(y)
     assert avl.to_list('inorder')==sorted(xs)
-
-
 @given(xs=ints, ys=ints)
 def test__AVLTree_remove_list(xs,ys):
     xs = list(set(xs))
@@ -335,4 +331,4 @@ def test__AVLTree_eq(xs):
     random.shuffle(xs2)
     bst2 = AVLTree(xs2)
 
-    assert bst1 == bst2
+    assert list(bst1) == list(bst2)
